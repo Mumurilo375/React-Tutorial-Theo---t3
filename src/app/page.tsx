@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const mockUrls = [
   "https://wop051lmme.ufs.sh/f/OPsIdbYoKx9ZjJkLU35oGgHOkAyemLFWaBDx6Pw3SR2Tfzrn",
+  "https://wop051lmme.ufs.sh/f/OPsIdbYoKx9ZuWBmchSobtdQY47URKzX0MaICAkNv3PmF58g"
 ];
 
 const mockImages = mockUrls.map((url, index) => ({
