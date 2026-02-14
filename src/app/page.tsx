@@ -5,7 +5,9 @@ export const dynamic = "force-dynamic"; // nao deixa a pagina guardar cache
 
 export default async function homePage() {
 
-  const images = await db.query.images.findMany();
+  const images = await db.query.images.findMany({
+    orderBy: (model, { desc }) => desc(model.id),
+  });
 
   return (
     <div className="flex flex-wrap gap-4">
