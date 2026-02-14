@@ -54,6 +54,7 @@ No video ele muda o DATABASE_URL para POSTGRES_URL, porem com o NEON database is
 
 Para adicionar middlewares pelo Clerk core 2, podemos: pnpm add @clerk/nextjs e pnpm approve-builds
     Apos isso, se eu estiver com a versao do next inferior a 15.0, devemos criar um arquivo chamado middleware.ts, mas como minha versao e superior, devemos criar um arquivo chamado proxy.ts
-        Depois, devemos seguir os passos da documentacao, e importar o .env tanto localmente quando no Vercel
+        Se bem que eu testei o proxy.ts e nao funcionou, criei o middleware entao.
+    Depois, devemos seguir os passos da documentacao, e importar o .env tanto localmente quando no Vercel
 
 Dentro da pasta app, podemos criar pastas que comecam com " _ " , como por exemplo " _components ", e isso vai indicar ao next que nao e para ser tratado como uma rota
