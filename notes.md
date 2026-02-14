@@ -9,7 +9,7 @@ novo projeto: pnpm create t3-app@latest // ->TS - Tailwind - tRPC (recomendado m
 - [X] Scaffold basic ui with mock data
 - [X] Tidy up build process
 - [X] Actually set up a database (Neon vercel postgres)
-- [ ] Attach database to UI
+- [X] Attach database to UI
 - [ ] Add image upload
 - [ ] Error management (w/ clerk)
 - [ ] Routing/image page (parallel route)
@@ -51,3 +51,9 @@ export const db = drizzle(conn, { schema });
 
 No video ele muda o DATABASE_URL para POSTGRES_URL, porem com o NEON database isso nao e necessario. Porem temos que ir em projeto - storage - env variables e deletar o DATABASE_URL que cria por padrao, para que assim possamos criar as variaveis novas.
     Apos isso, devemos rodar o pnpm run db:push e pnpm run db:studio
+
+Para adicionar middlewares pelo Clerk core 2, podemos: pnpm add @clerk/nextjs e pnpm approve-builds
+    Apos isso, se eu estiver com a versao do next inferior a 15.0, devemos criar um arquivo chamado middleware.ts, mas como minha versao e superior, devemos criar um arquivo chamado proxy.ts
+        Depois, devemos seguir os passos da documentacao, e importar o .env tanto localmente quando no Vercel
+
+Dentro da pasta app, podemos criar pastas que comecam com " _ " , como por exemplo " _components ", e isso vai indicar ao next que nao e para ser tratado como uma rota
