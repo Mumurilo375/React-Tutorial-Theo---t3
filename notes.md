@@ -6,7 +6,7 @@ novo projeto: pnpm create t3-app@latest // ->TS - Tailwind - tRPC (recomendado m
 
 #TODO
 - [X] Make it deploy (vercel)
-- [ ] Scaffold basic ui with mock data
+- [X] Scaffold basic ui with mock data
 - [ ] Actually set up a database (vercel postgres)
 - [ ] Attach database to UI
 - [ ] Add image upload

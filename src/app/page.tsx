@@ -21,7 +21,7 @@ const mockUrls = [
 
 const mockImages = mockUrls.map((data, index) => ({
   id: index + 1,
-  urlImage: data.url
+  url: data.url
 }));
 
 export default function homePage() {
@@ -29,7 +29,7 @@ export default function homePage() {
     <div className="flex flex-wrap gap-4">
       {mockImages.map((image) => (
           <div key={image.id} className="w-56">
-            <img src={image.urlImage} alt={"image.id"}/>
+            <img src={image.url} alt={"image.id"}/>
           </div>
         ))}
     </div>
