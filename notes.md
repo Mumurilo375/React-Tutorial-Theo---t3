@@ -21,4 +21,33 @@ conectar o deploy no vercel:
     entre no site vercel, clique em new - project - repositorio no git - adiciona envirolment variables (pode usar uma fake gerada no .env para teste)- deploy
 
 Nao recomendasse salvar as imagens do projeto na pasta public, tem potencial de problemas, recomendado usar o site 'uploadthing'.
-div classname flex flex-(((wrap))) esse wrap significa que vai criar multiplos rows, por exemplo para imagem, nao vai ter so uma lista, se tiver 100 imagens vai ficar se extendendo ate acabar
+div classname flex flex-(((wrap))) esse wrap significa que vai criar multiplos rows, por exemplo para imagem, nao vai ter so uma lista, se tiver 100 imagens vai ficar se extendendo ate acabar.
+
+
+
+
+
+Sobre conectar com o banco de dados, fiz diretamente pelo vercel. Fui no projeto e depois em storage e selecionei Neon postgres (muito importante selecionar a regiao do projeto para o DB ), criei um nome e depois copiei o Snippet do .env.local e colei para meu .env
+    proximo passo e instalar o postgres no terminal: pnpm install postgres
+        e o index.ts deve ficar assim:
+            import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
+import { env } from "~/env";
+import * as schema from "./schema";
+
+/**
+ * Cache the database connection in development. This avoids creating a new connection on every HMR
+ * update.
+ */
+const globalForDb = globalThis as unknown as {
+  conn: postgres.Sql | undefined;
+};
+
+const conn = globalForDb.conn ?? postgres(env.DATABASE_URL);
+if (env.NODE_ENV !== "production") globalForDb.conn = conn;
+
+export const db = drizzle(conn, { schema });
+
+
+No video ele muda o DATABASE_URL para POSTGRES_URL, porem com o NEON database isso nao e necessario. Porem temos que ir em projeto - storage - env variables e deletar o DATABASE_URL que cria por padrao, para que assim possamos criar as variaveis novas.
+    Apos isso, devemos rodar o pnpm run db:push e pnpm run db:studio
