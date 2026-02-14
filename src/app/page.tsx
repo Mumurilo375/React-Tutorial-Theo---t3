@@ -1,6 +1,7 @@
 /*import Image from "next/image";*/
 
 import { db } from "~/server/db";
+export const dynamic = "force-dynamic";
 
 const mockUrls = [
 {url:"https://wop051lmme.ufs.sh/f/OPsIdbYoKx9ZjJkLU35oGgHOkAyemLFWaBDx6Pw3SR2Tfzrn"},
