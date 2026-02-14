@@ -10,7 +10,9 @@ novo projeto: pnpm create t3-app@latest // ->TS - Tailwind - tRPC (recomendado m
 - [X] Tidy up build process
 - [X] Actually set up a database (Neon vercel postgres)
 - [X] Attach database to UI
+- [X] Add authentication (w/ clerk)
 - [ ] Add image upload
+- [ ] "taint" (server-only)
 - [ ] Error management (w/ clerk)
 - [ ] Routing/image page (parallel route)
 - [ ] Delete button (w/ Server Actions)
