@@ -12,7 +12,7 @@ async function Images() {
     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto w-full max-w-4xl overflow-hidden">
           {images.map((image, index) => (
             <div key={image.id + "-" + index} className="w-full px-2" >
-              <img src={image.url} alt={"image.id"} className="w-full h-auto object-cover rounded-lg"/>
+              <img src={image.url} alt={"image.id"} className="w-full h-50 object-cover rounded-lg"/>
               <div>
                 <h3>{image.name}</h3>
               </div>
