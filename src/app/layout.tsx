@@ -1,7 +1,9 @@
 import "~/styles/globals.css";
+import "@uploadthing/react/styles.css";
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import { TopNav } from "./_components/topnav";
+
 // import { db } from "~/server/db";
 
 //clerk middleware import
