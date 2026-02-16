@@ -13,6 +13,7 @@ novo projeto: pnpm create t3-app@latest // ->TS - Tailwind - tRPC (recomendado m
 - [X] Add authentication (w/ clerk)
 - [ ] Add image upload
 - [ ] "taint" (server-only)
+- [ ] Use Next/Image component
 - [ ] Error management (w/ clerk)
 - [ ] Routing/image page (parallel route)
 - [ ] Delete button (w/ Server Actions)
@@ -60,3 +61,5 @@ Para adicionar middlewares pelo Clerk core 2, podemos: pnpm add @clerk/nextjs e 
     Depois, devemos seguir os passos da documentacao, e importar o .env tanto localmente quando no Vercel
 
 Dentro da pasta app, podemos criar pastas que comecam com " _ " , como por exemplo " _components ", e isso vai indicar ao next que nao e para ser tratado como uma rota
+
+Agora para adicionar o uploadThing, colamos a api key legacy no .env, vamos na documentacao e seguimos o processo de instalacao via pnpm
