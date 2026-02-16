@@ -13,8 +13,8 @@ async function Images() {
           {images.map((image) => (
             <div key={image.id} className="w-full px-2" >
               <img src={image.url} alt={"image.id"} className="w-full h-50 object-cover rounded-lg"/>
-              <div>
-                <h3>{image.name}</h3>
+              <div className="mt-2">
+                <h3 className="text-sm font-medium truncate" title={image.name}>{image.name}</h3>
               </div>
             </div>))}
     </div>
